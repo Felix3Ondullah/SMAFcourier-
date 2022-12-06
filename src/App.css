@@ -48,7 +48,7 @@
 }
 /*contactus page styling */ 
 
-#title, #content, #author{
+#name, #email, #message{
   height: 2vw; 
   width: 100%;
   border-top: none;
@@ -92,4 +92,12 @@
   height: 2vw; 
   background-color: blue;
   color: white;
+}
+
+/* iframe styling  */
+
+.gmap_canvas{
+  height: 5vh;
+  width: 30vw;
+  margin-bottom: 1vw;
 }

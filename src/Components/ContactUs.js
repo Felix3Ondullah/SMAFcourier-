@@ -4,11 +4,11 @@ import image from "../Assets/message.png"
 
 
 const ContactUs =() =>{
-    const url = 'https://lit-depths-86097.herokuapp.com/blogs'
+    const url = ''
     const [data, setData] = useState({
-        title: ' ',
-        content: ' ',
-        author: ' ',
+        name: ' ',
+        email: ' ',
+        message: ' ',
       })
 
       function handle(e) {
@@ -23,10 +23,9 @@ const ContactUs =() =>{
         e.preventDefault()
         
         Axios.post(url, {
-          title: data.title,
-          content : data.content,
-          author : data.author,
-          likes : data.likes
+          name: data.name,
+          email : data.email,
+          message : data.message,
         })
         .then(res=>console.log(res))
 
@@ -46,14 +45,14 @@ const ContactUs =() =>{
         <form id="contactusform" onSubmit={(e)=>addDataForm(e)}>
         <br/>
         <br/>
-                <input onChange={(e)=>handle(e)} type='text' id="title" value={data.title} required name="name" placeholder="enter your name" />
+                <input onChange={(e)=>handle(e)} type='text' id="name" value={data.name} required name="name" placeholder="enter your name" />
                 <br/>
                 <br/>
-                <input onChange={(e)=>handle(e)} type='email' id="content" value={data.content} required name="email" placeholder="enter your email addres"/>
+                <input onChange={(e)=>handle(e)} type='email' id="email" value={data.email} required name="email" placeholder="enter your email addres"/>
                 <br/>
                 <br/>
                 
-                <input onChange={(e)=>handle(e)} type='text' id="author" value={data.author} required name="message" placeholder=" message"/>
+                <input onChange={(e)=>handle(e)} type='text' id="message" value={data.message} required name="message" placeholder=" message"/>
                 <br/>
                 <br/>
                 <input onChange={(e)=>handle(e)} type='submit'  className="submitMessage"/>
