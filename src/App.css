@@ -96,8 +96,9 @@
 
 /* iframe styling  */
 
-.gmap_canvas{
-  height: 5vh;
-  width: 30vw;
+#gmap_canvas{
+  height: 35vw;
+  width: 70vw;
   margin-bottom: 1vw;
+  margin: 2vw;
 }

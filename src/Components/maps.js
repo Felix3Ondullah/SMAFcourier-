@@ -16,15 +16,15 @@ function Maps() {
 
     return(
         <Fragment>
-            <input type="text" placeholder="place the starting poing" onChange={()=>handleLocation()} id/>
+            <input type="text" placeholder="place the starting poing" onChange={()=>handleLocation()} id="message"/>
             <div class="mapouter">
                 <div class="gmap_canvas">
-                    <iframe width="600" height="500" id="gmap_canvas" src={starting} frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                    <iframe  id="gmap_canvas" src={starting} frameborder="0" scrolling="yes" marginheight="0" marginwidth="0">
                         </iframe>
-                        <a href="https://fmovies-online.net">fmovies</a>
+                        {/* <a href="https://fmovies-online.net">fmovies</a> */}
                         <br />
                        
-                        <a href="https://www.embedgooglemap.net">google map html generator</a>
+                        {/* <a href="https://www.embedgooglemap.net">google map html generator</a> */}
                         </div>
                         </div>
         </Fragment>
