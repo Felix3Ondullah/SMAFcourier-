@@ -32,16 +32,11 @@ const App =() => {
          <Route path='/signup' element={<Signup/>} />
           <Route path='/admin' element={<Admin/>} />
          <Route path='/orderform' element={<OrderForm />} />
-<<<<<<< HEAD
          <Route path='/order' element={<Orders/>} />
          <Route path='/updateorder' element={<UpdateOrder/>} />
-       
-        
-=======
          <Route path="/order/:id" element={<DetailsCard />} />
          <Route path='/admin' element={<Admin/>} />
          <Route path='/contact' element={<ContactUs/>} />
->>>>>>> 3a90103b0be766134619ef768dced9e768a16a5e
          </Routes>
       <Footer/>
 </>
