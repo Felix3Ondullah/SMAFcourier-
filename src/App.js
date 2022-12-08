@@ -9,8 +9,7 @@ import Footer from "./Components/Footer";
 import Signup from "./Components/Signup";
 import OrderForm from "./Components/OrderForm";
 import Admin from "./Components/Admin";
-import Email from "./Components/email";
-import Maps from "./Components/maps";
+
 
 const App =() => {
   // const [login, setlogin]= useState("")
@@ -25,8 +24,6 @@ const App =() => {
          <Route path='/orderform' element={<OrderForm />} />
          <Route path='/admin' element={<Admin/>} />
          <Route path='/contact' element={<ContactUs/>} />
-         <Route path="/maps" element={<Maps/>}/>
-         <Route path="/email" element = {<Email/>}/>
          </Routes>
          
       <Footer/>
