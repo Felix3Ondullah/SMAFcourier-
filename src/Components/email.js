@@ -8,25 +8,25 @@ const Email = () =>{
        setFormState({...formState, [e.target.name]: e.target.value})
    }
    const handleSubmit = (e) =>{
-       e.preventDefault
+       e.preventDefault()
        const config = {
            SecureToken: '934bb5cc-b914-4385-b22e-8a08c5c6d90c ',
            To : 'immaculatemariah@mail.com',
            From : formState.email,
            Subject : formState.title,
-           Body : `${formstate.name} ${formState.message}`
+           Body : `${formState.name} ${formState.message}`
        }
-       if(window.Email){
            window.email.send(config).then(()=>{alert("email successfully sent")})
-       }
+       
+       e.reset()
    }
    return (
        <div>
            <form onSubmit={handleSubmit}>
-               <input type="text" name="name" id="name"value={formState.name} onChange={changeState}/>
-               <input type="email" name="email" id="email" value={formState.email} onChange={changeState}/>
-               <input type="text" name="title" id="title" value={formState.title} onChange={changeState}/>
-               <textarea type="text" name="message"  id="content" value={formstate.message} onChange={changeState}/>
+               <input type="text" name="name" id="name"value={formState.name} onChange={changeState} placeholder="name"/>
+               <input type="email" name="email" id="email" value={formState.email} onChange={changeState} placeholder="email"/>
+               <input type="text" name="title" id="title" value={formState.title} onChange={changeState} placeholder="title"/>
+               <textarea type="text" name="message"  id="content" value={formState.message} onChange={changeState} placeholder="message"/>
                <input type="submit" value="send email"/>
                </form>
        </div>
