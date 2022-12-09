@@ -7,13 +7,12 @@ import {
   HStack,
   IconButton,
   Input,
-  SkeletonText,
   Text,
   
 } from '@chakra-ui/react'
 import { FaLocationArrow, FaTimes } from 'react-icons/fa'
 import {useJsApiLoader, GoogleMap, Marker, Autocomplete, DirectionsRenderer} from "@react-google-maps/api"
-import { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 
 const center = {lat: -1.286389, lng: 36.817223}
@@ -23,6 +22,8 @@ function Maps() {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries: ['places'],
   })
+  console.log(('api key'))
+  console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY)
 
   const [map, setMap] = useState(/** @type google.maps.Map */ (null))
   const [directionsResponse, setDirectionsResponse] = useState(null)
@@ -35,7 +36,7 @@ function Maps() {
    /** @type React.MutableRefObject<HTMLInputElement> */
   const destinationRef = useRef()
   if(!isLoaded){
-    return <SkeletonText/>
+    return 'hello'
   }
 
   async function calculateRoutes() {
@@ -66,7 +67,7 @@ function Maps() {
   }
 
   return (
-    <React.StrictMode>
+    
     <ChakraProvider theme={theme}>
     <Flex
       position='relative'
@@ -131,8 +132,7 @@ function Maps() {
       </Box>
     </Flex>
     </ChakraProvider>
-  </React.StrictMode>
-   
+    
   )
 }
 
