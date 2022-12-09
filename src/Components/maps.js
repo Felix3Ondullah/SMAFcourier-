@@ -22,8 +22,7 @@ function Maps() {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries: ['places'],
   })
-  console.log(('api key'))
-  console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY)
+
 
   const [map, setMap] = useState(/** @type google.maps.Map */ (null))
   const [directionsResponse, setDirectionsResponse] = useState(null)
