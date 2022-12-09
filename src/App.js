@@ -1,4 +1,4 @@
-// import React,{useEffect, useState} from "react";
+//  import React,{useEffect, useState} from "react";
 import {Route, Routes} from 'react-router-dom';
 import Home from './Components/Home';
 import Orders from "./Components/Orders";
@@ -14,28 +14,34 @@ import Admin from "./Components/Admin";
 
 
 const App =() => {
-  // const[orders, setOrders]= useState("")
+  // const[user, setUser]= useState(null)
 
-  //   useEffect((
-  //       fetch("http://127.0.0.1:4000/orders")
-  //       .then(r=>r.json())
-  //       .then(orders=> setOrders(orders))
-  //   ),[])
+  // useEffect(() => {
+  //   // auto-login
+  //   fetch("http://localhost:3000/me").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) => setUser(user));
+  //     }
+  //   });
+  // }, []);
+
+  // if (!user) return <Login onLogin={setUser} />
+  
   return(
     <>
       <Navbar/>
          <Routes>
          <Route path='/' element={<Home/>} />
-         <Route path='/contact' element={<ContactUs/>} />
-         <Route path='/admin' element={<Admin/>} />
-         <Route path='/login' element={<Login/>} />
-         <Route path='/signup' element={<Signup/>} />
-         <Route path='/admin' element={<Admin/>} />
-         <Route path='/orderform' element={<OrderForm />} />
-         <Route path="/order/:id" element={<DetailsCard />} />
-         <Route path='/admin' element={<Admin/>} />
-         <Route path='/contact' element={<ContactUs/>} />
-         <Route path='/order' element={<Orders/>} />
+         <Route exact path='/contact' element={<ContactUs/>} />
+         <Route exact path='/admin' element={<Admin/>} />
+         <Route exact path='/signup' element={<Signup/>} />
+         <Route exact path='/login' element={<Login />} />
+         <Route exact path='/admin' element={<Admin/>} />
+         <Route exact path='/orderform' element={<OrderForm />} />
+         <Route exact path="/order/:id" element={<DetailsCard />} />
+         <Route exact path='/admin' element={<Admin/>} />
+         <Route exact path='/contact' element={<ContactUs/>} />
+         <Route exact path='/order' element={<Orders/>} />
          </Routes>
       <Footer/>
 </>

@@ -10,7 +10,7 @@ function DetailsCard() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:4000/orders/${id}`).then((response) => {
+    fetch(`http://localhost:3000/orders/${id}`).then((response) => {
       if (response.ok) {
         response.json().then((parcel) => {
           console.log(parcel);
