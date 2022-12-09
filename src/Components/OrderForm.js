@@ -24,7 +24,7 @@ function OrderForm() {
   const [number_of_kgs, setNumber_Of_Kgs] = useState('')
   const [drop_off_location, setDrop_Off_Location] = useState('')
   const [date, setDate] = useState('')
-  const [sender_name, setSender_Name] = useState('')
+  // const [sender_name, setSender_Name] = useState('')
   const [receiver_name, setReceiver_Name] = useState('')  
   const navigate = useNavigate()
   const[user, setUser]= useState(null)
@@ -43,7 +43,7 @@ function OrderForm() {
             pick_up_location,
             number_of_kgs,
             drop_off_location,
-            sender_name,
+            // sender_name,
             receiver_name,
             date
         }
@@ -95,14 +95,15 @@ function OrderForm() {
             <div className='class'>
 
            
-                  <TextField
+                  {/* <TextField
                 id="outlined-disabled"
                 label=" Sender Name"
                 value={sender_name}
                 onChange={(e)=>setSender_Name(e.target.value)}
-              />
+              /> */}
 
                  <TextField
+                 required
                   id="outlined-read-only-input"
                   label="Reciever Name"
                   value={receiver_name}
@@ -117,6 +118,7 @@ function OrderForm() {
                 onChange={(e)=>setPackage_Type(e.target.value)}
               />
                <TextField
+               required
                   id="outlined-password-input"
                   label="Kilograms"
                   value={number_of_kgs}
@@ -126,6 +128,7 @@ function OrderForm() {
            
               <div className='class'>
                 <TextField
+                required
                   id="outlined-password-input"
                   label="Date"
                   value={date}
@@ -135,6 +138,7 @@ function OrderForm() {
                 
                 />
                 <TextField
+                required
                   id="outlined-read-only-input"
                   label="Pick Up Location"
                   value={pick_up_location}
@@ -142,6 +146,7 @@ function OrderForm() {
 
                 />
                <TextField
+               required
                 id="outlined-disabled"
                 label=" Drop Off Location"
                 value={drop_off_location}

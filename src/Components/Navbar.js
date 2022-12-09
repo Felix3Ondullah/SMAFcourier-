@@ -12,7 +12,7 @@ const Navbar =({onLogout}) =>{
     return(
         <> 
         <header>
-            <div className="container  container-flex">
+            <div className=" nav-container">
                 <nav>
                     <div className="navbar">
                     <NavLink to ='/' className="navitem"> Home </NavLink>
@@ -20,9 +20,6 @@ const Navbar =({onLogout}) =>{
                     {/* <NavLink to ='/logout' className="navitem"> Logout </NavLink> */}
                     <NavLink to ='/admin' className="navitem"> Admin </NavLink>
                     <NavLink to ='/contact' className="navitem"> ContactUs </NavLink>
-                    <header>
-                      <button className="logout-btn">Logout</button>
-                    </header>
                     </div>
                 </nav>
 

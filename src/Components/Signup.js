@@ -62,7 +62,6 @@ function Signup() {
               />
 
             </div>
-          </div>
           <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
@@ -88,6 +87,7 @@ function Signup() {
           </div>
           <div className='signup-btn'>
             <button> Get Started</button>
+          </div>
           </div>
           </form>
           

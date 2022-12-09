@@ -1,16 +1,19 @@
-.restbody{
- 
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 1rem;
-    width: 100%;
+.card-body{
+    width: 50%;
     margin: auto;
     padding: 2rem;
-    display: flex;
- flex-wrap: wrap;
- border-radius: 3px;
- box-shadow: 3px 3px 5px;
- align-items: right;
- align-content: stretch;
- 
+    display: block;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px 5px;
+}
+.back-button{
+    position: absolute;
+    top:50%;
+    background-color:#0a0a23;
+    color: #fff;
+    border:none; 
+    border-radius:10px; 
+    padding:5px;
+    min-height:10px; 
+    min-width: 120px;
 }
