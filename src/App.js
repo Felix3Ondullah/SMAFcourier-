@@ -1,4 +1,4 @@
-// import React,{useEffect, useState} from "react";
+//  import React,{useEffect, useState} from "react";
 import {Route, Routes} from 'react-router-dom';
 import Home from './Components/Home';
 import Orders from "./Components/Orders";
@@ -16,12 +16,41 @@ import AdminDash from './Components/AdminDash';
 
 
 const App =() => {
+  // const[user, setUser]= useState(null)
+
+  // useEffect(() => {
+  //   // auto-login
+  //   fetch("http://localhost:3000/me").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) => setUser(user));
+  //     }
+  //   });
+  // }, []);
+
+  // if (!user) return <Login onLogin={setUser} />
+  
+
+
+const App =() => {
  
+
   return(
     <>
       <Navbar/>
          <Routes>
          <Route path='/' element={<Home/>} />
+
+         <Route exact path='/contact' element={<ContactUs/>} />
+         <Route exact path='/admin' element={<Admin/>} />
+         <Route exact path='/signup' element={<Signup/>} />
+         <Route exact path='/login' element={<Login />} />
+         <Route exact path='/admin' element={<Admin/>} />
+         <Route exact path='/orderform' element={<OrderForm />} />
+         <Route exact path="/order/:id" element={<DetailsCard />} />
+         <Route exact path='/admin' element={<Admin/>} />
+         <Route exact path='/contact' element={<ContactUs/>} />
+         <Route exact path='/order' element={<Orders/>} />
+
          <Route path='/contact' element={<ContactUs/>} />
          <Route path='/admin' element={<Admin/>} />
          <Route path='/login' element={<Login/>} />
@@ -34,6 +63,7 @@ const App =() => {
          <Route path='/admindashboard' element={<AdminDash/>} />
          <Route path='/contact' element={<ContactUs/>} />
          <Route path='/order' element={<Orders/>} />
+
          </Routes>
       <Footer/>
 </>

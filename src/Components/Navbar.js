@@ -5,7 +5,7 @@ import "../Css/Navbar.css"
 
 const Navbar =({onLogout}) =>{
     // function handleLogout() {
-    //     fetch("/logout", {
+    //     fetch("http://localhost:3000/logout", {
     //       method: "DELETE",
     //     }).then(() => onLogout());
     //   }
