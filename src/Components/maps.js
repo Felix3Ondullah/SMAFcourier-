@@ -34,7 +34,7 @@ function Maps() {
   /** @type React.MutableRefObject<HTMLInputElement> */
  const destinationRef = useRef()
  if(!isLoaded){
-   return 'hello'
+   return 'map is loading...'
  }
  
  async function calculateRoutes() {
