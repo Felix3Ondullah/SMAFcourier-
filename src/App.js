@@ -15,7 +15,7 @@ import AdminDash from './Components/AdminDash';
 
 
 
-const App =() => {
+// const App =() => {
   // const[user, setUser]= useState(null)
 
   // useEffect(() => {
