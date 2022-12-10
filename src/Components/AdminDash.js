@@ -22,6 +22,7 @@ function AdminDash() {
           result = await result.json();
           setOrders(result);
         }
+        
   return (
     <>
     <TableContainer component={Paper}>

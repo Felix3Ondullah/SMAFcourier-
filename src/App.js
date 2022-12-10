@@ -12,6 +12,8 @@ import DetailsCard from "./Components/DetailsCard";
 import Admin from "./Components/Admin";
 import UpdateOrder from './Components/UpdateOrder';
 import AdminDash from './Components/AdminDash';
+import Maps from './Components/maps';
+import Email from './Components/email';
 
 
 
@@ -50,7 +52,8 @@ const App =() => {
          <Route exact path='/admin' element={<Admin/>} />
          <Route exact path='/contact' element={<ContactUs/>} />
          <Route exact path='/order' element={<Orders/>} />
-
+         <Route exact path='/maps' element={<Maps/>} />
+         <Route exact path='/email' element={<Email/>} />
          <Route path='/contact' element={<ContactUs/>} />
          <Route path='/admin' element={<Admin/>} />
          <Route path='/login' element={<Login/>} />
@@ -69,4 +72,4 @@ const App =() => {
 </>
 
   )}
-export default App;
+export default App
