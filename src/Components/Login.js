@@ -21,6 +21,14 @@ function Login({ onLogin }) {
     }).then((r) => r.json())
     .then((user)=> onLogin(user))
     navigate('/orderform')
+
+    if (username === "admin" && password === "admin") {
+      alert("Login Successfully")
+      navigate('/orderform')
+      } else {
+      alert("User not found!", {
+      });
+      }
   }
 
     return(
