@@ -34,7 +34,7 @@ function Maps() {
   /** @type React.MutableRefObject<HTMLInputElement> */
  const destinationRef = useRef()
  if(!isLoaded){
-   return 'map is loading...'
+   return 'hello'
  }
  
  async function calculateRoutes() {
@@ -75,7 +75,7 @@ function Maps() {
      h='100vh'
      w='100vw'
    >
-     <Box position='absolute' left={4} top={3} h='80%' w='80%'>
+     <Box position='absolute' left={4} top={3} h='70%' w='70%'>
      <GoogleMap center={center} zoom={15} mapContainerStyle={{width: "100%", height: "100%"}}
      onLoad={(map)=>setMap(map)}
      >
@@ -90,7 +90,7 @@ function Maps() {
        p={4}
        borderRadius='lg'
        mt={4}
-       bgColor='white'
+       bgColor='black'
        shadow='base'
        minW='container.md'
        zIndex='1'
@@ -107,10 +107,11 @@ function Maps() {
         
         
          <ButtonGroup>
-           <Button colorScheme='pink' type='submit' onClick={calculateRoutes}>
+           <Button colorScheme='blue' type='submit' onClick={calculateRoutes}>
              Calculate Route
            </Button>
            <IconButton
+             bgColor='black'
              aria-label='center back'
              icon={<FaTimes />}
              onClick={clearRoute}
@@ -121,6 +122,7 @@ function Maps() {
          <Text>Distance: {distance}</Text>
          <Text>Duration: {duration}</Text>
          <IconButton
+         bgColor='black'
            aria-label='center back'
            icon={<FaLocationArrow />}
            isRound
