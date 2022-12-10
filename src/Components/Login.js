@@ -24,7 +24,7 @@ function Login({ onLogin }) {
 
     if (username === "admin" && password === "admin") {
       alert("Login Successfully")
-      navigate('/orderform')
+      navigate('/order/:id')
       } else {
       alert("User not found!", {
       });
