@@ -21,16 +21,25 @@ export const Email = () => {
  };
  
  return (
-   <Fragment>
-     <form ref={form} onSubmit={sendEmail}>
-     <label>Name</label>
+   <Fragment className="emailus">
+    <div id='content'>
+    <form ref={form} onSubmit={sendEmail} id="emailform">
+     <label>Name:</label>
+     
      <input type="text" name="user_name" id='name'/>
-     <label>Email</label>
+     <br/>
+     <label>Email:</label>
+     
      <input type="email" name="user_email" id='email'/>
-     <label>Message</label>
+     <br/>
+     <label>Message:</label>
+     
      <textarea name="message" id='title'/>
-     <input type="submit" value="Send" />
+     <br/>
+     <input type="submit" value="Send" className='submitMessage'/>
    </form>
+    </div>
+
    </Fragment>
  
  );
