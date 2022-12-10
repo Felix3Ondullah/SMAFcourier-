@@ -4,6 +4,8 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import "./ContactUs.css"
+import Maps from "./maps";
+import Email from "./email";
 
 const ContactUs =() =>{
     return(
@@ -13,7 +15,8 @@ const ContactUs =() =>{
                 <div className="support">
                     <h1>Get in Touch</h1>
                     <p>For support or an question:</p>
-                    <p>Email us at support@smafcourrier.com</p>
+                    <p>Fill the form below</p>
+                    <Email />
                     <div className="icons">
                       <p><InstagramIcon className="icon"/>@SMAF_Courrier</p>
                       <p><FacebookIcon className="icon"/>SMAF_Courrier</p>
@@ -23,14 +26,14 @@ const ContactUs =() =>{
                 
                 </div>
                 <div className="contact-info">
-                <h2 >SMAF Courrier</h2>
+                {/* <h2 >SMAF Courrier</h2>
                     <p>Tom Mboya Street</p>
-                    <p>Nairobi,Kenya</p>
-                    <iframe width="600" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=tom%20mboya%20street&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <p>Nairobi,Kenya</p> */}
+                    
                 </div>
             </div>
         </section>
+        <Maps />
         {/* <footer>
          <hr/>
          <p>&copy SMUF Courrier. <a href="#" id="footer-link">Terms</a><a href="#">Privacy</a></p>

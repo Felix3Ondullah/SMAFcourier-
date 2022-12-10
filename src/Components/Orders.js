@@ -12,6 +12,7 @@ import { Link }from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import DetailsCard from "./DetailsCard";
 import Emailuser from "./userPrompt";
+import Axios from "axios"
 
 function Orders() {
 const[orders, setOrders]= useState([])
@@ -43,15 +44,15 @@ function deleteOrder(id) {
   }
   console.log(orders)
 
-  function updateDestination(id) {
+//   function updateDestination(id) {
     
-    Axios.post(`http://127.0.0.1:4000/orders/${id}`, {
-      destination : row.drop_off_location
-    })
-    .then(res=>console.log(res))
+//     Axios.post(`http://127.0.0.1:4000/orders/${id}`, {
+//       destination : row.drop_off_location
+//     })
+//     .then(res=>console.log(res))
 
     
-}
+// }
   
 return(
   <>
