@@ -4,13 +4,7 @@ import "./Admin.css"
 
 function Admin() {
   const navigate = useNavigate()
-  // if (username === "admin" && password === "admin") {
-  //   toast("Login Successfully")
-  //   navigate('/booking')
-  //   } else {
-  //   toast.error("User not found!", {
-  //   });
-  //   }
+
   const [errorMessages, setErrorMessages] = useState({});
 const [isSubmitted, setIsSubmitted] = useState(false);
 
