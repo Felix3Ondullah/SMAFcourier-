@@ -1,13 +1,13 @@
 
 import React, { useState } from "react";
-import { NavLink} from "react-router-dom";
+import {useNavigate, NavLink} from "react-router-dom";
 import "./Login.css"
 function Login({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   // const [errors, setErrors] = useState([]);
   // const [isLoading, setIsLoading] = useState(false);
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   function handleSubmit(e) {
     e.preventDefault();
     // setIsLoading(true);
@@ -20,6 +20,11 @@ function Login({ onLogin }) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => onLogin(user));
+        navigate('/orderform')
+      } else {
+          alert("Invalid Username or Password!")
+          
+          navigate('/login')
     }})
     
     // navigate('/orderform')

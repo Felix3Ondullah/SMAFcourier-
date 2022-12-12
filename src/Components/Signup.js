@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-// import {useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import "./Signup.css"
-function Signup(onLogin) {
+function Signup({onLogin}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [email, setEmail] = useState("");
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   function handleSubmit(e) {
     e.preventDefault();
     fetch("http://localhost:4000/signup", {
@@ -24,8 +24,13 @@ function Signup(onLogin) {
     .then((r) => {
       if (r.ok) {
         r.json().then((user) => onLogin(user));
+        navigate('/orderform')
+      } else {
+          alert("Invalid Username or Password!")
+          
+          navigate('/signup')
     }})
-      // navigate('/login')
+    
   }
   return (
     <div className="signup-content">
