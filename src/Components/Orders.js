@@ -21,10 +21,10 @@ useEffect(() => {
   getOrders();
 }, []);
 
-function handlelogOut(){
-  fetch("/logout", { method: "DELETE"})
-        .then((response) => { if(response.ok) { onLogin(null) } });
-}
+// function handlelogOut(){
+//   fetch("/logout", { method: "DELETE"})
+//         .then((response) => { if(response.ok) { onLogin(null) } });
+// }
 
 async function getOrders() {
   let result = await fetch("http://127.0.0.1:4000/orders");
@@ -111,7 +111,7 @@ return(
             </TableBody>
           </Table>
     </TableContainer>
-    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" onClick={{handlelogOut}} >Log out</button>
+    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" onClick={()=>{detailNav("/")}} >Log out</button>
   </>
   
   );
