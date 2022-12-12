@@ -1,32 +1,35 @@
 
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import "./Login.css"
 function Login({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate()
+  // const [errors, setErrors] = useState([]);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const navigate = useNavigate()
   function handleSubmit(e) {
     e.preventDefault();
-    setIsLoading(true);
+    // setIsLoading(true);
     fetch("http://localhost:4000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ username, password }),
-    }).then((r) => r.json())
-    .then((user)=> onLogin(user))
-    navigate('/orderform')
-    if (username === "admin" && password === "admin") {
-      alert("Login Successfully")
-      navigate('/orderform')
-      } else {
-      alert("User not found!", {
-      });
-      }
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((user) => onLogin(user));
+    }})
+    
+    // navigate('/orderform')
+    // if (username === "admin" && password === "admin") {
+    //   alert("Login Successfully")
+    //   navigate('/orderform')
+    //   } else {
+    //   alert("User not found!", {
+    //   });
+    //   }
   }
     return(
         <div className='log-in-container'>
