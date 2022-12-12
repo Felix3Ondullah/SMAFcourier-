@@ -1,11 +1,11 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState} from 'react'
 import "../Css/OrderForm.css"
 import { useNavigate } from 'react-router-dom'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import FormLabel from '@mui/material/FormLabel';
-import Login from "./Login"
+import FormLabel from '@mui/material/FormLabel'
+
 
 
 function OrderForm() {
@@ -27,12 +27,10 @@ function OrderForm() {
   // const [sender_name, setSender_Name] = useState('')
   const [receiver_name, setReceiver_Name] = useState('')  
   const navigate = useNavigate()
-  const[user, setUser]= useState(null)
-
 
   function handleSubmit(e) {
     e.preventDefault()
-    fetch('http://localhost:3000/orders',{
+    fetch('http://127.0.0.1:4000/orders',{
       method: 'POST',
       headers: {
           "Content-Type": "application/json",
@@ -53,17 +51,6 @@ function OrderForm() {
     navigate('/order')
   }
 
-
-  // useEffect(() => {
-  //   //  auto-login
-  //   fetch("http://localhost:3000/me").then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((user) => setUser(user));
-  //     }
-  //   });
-  // }, []);
-
-  // if (!user) return <Login onLogin={setUser} />
   return(
     <>
       <div className='order-form'>

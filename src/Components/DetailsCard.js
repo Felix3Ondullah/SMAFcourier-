@@ -11,7 +11,7 @@ function DetailsCard() {
   const back = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/orders/${id}`).then((response) => {
+    fetch(`http://localhost:4000/orders/${id}`).then((response) => {
       if (response.ok) {
         response.json().then((parcel) => {
           console.log(parcel);
