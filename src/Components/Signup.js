@@ -4,6 +4,11 @@ import "./Signup.css"
 
 function Signup() {
 
+
+import {useNavigate} from "react-router-dom";
+import "./Signup.css"
+function Signup({onLogin}) {
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -24,12 +29,20 @@ function Signup() {
         password_confirmation: passwordConfirmation,
       }),
     })
-      .then((r) => r.json())
-      navigate('/login')
+    .then((r) => {
+      if (r.ok) {
+        r.json().then((user) => onLogin(user));
+        navigate('/orderform')
+      } else {
+          alert("Invalid Username or Password!")
+          
+          navigate('/signup')
+    }})
+    
   }
   return (
     <div className="signup-content">
-        <div className ="signup">   
+        <div className ="signup">
           <h1>Sign Up for Free</h1>
           <form className='signup-form'
            onSubmit={handleSubmit}
@@ -47,17 +60,33 @@ function Signup() {
                autoComplete="off" 
                />
              
+              <input type="text"
+               value={username}
+               onChange={(e) => setUsername(e.target.value)}
+              required
+               autoComplete="off"
+               />
             </div>
 
             <div class="field-wrap">
               <label>
                 Email Address<span class="req">*</span>
               </label>
+
               <input 
                  type="email"
                  value={email}
                onChange={(e) => setEmail(e.target.value)}
                 required 
+               autoComplete="off"
+              />
+
+
+              <input
+                 type="email"
+                 value={email}
+               onChange={(e) => setEmail(e.target.value)}
+                required
                autoComplete="off"
               />
 
@@ -70,7 +99,11 @@ function Signup() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+
               required 
+
+              required
+
               autocomplete="off"
              />
           </div>
@@ -90,10 +123,13 @@ function Signup() {
           </div>
           </div>
           </form>
+
           
          </div>  
+
+         </div>
+
          </div>
   )
 }
-
 export default Signup

@@ -1,4 +1,5 @@
-//  import React,{useEffect, useState} from "react";
+
+import React,{useState} from "react";
 import {Route, Routes} from 'react-router-dom';
 import Home from './Components/Home';
 import Orders from "./Components/Orders";
@@ -10,7 +11,7 @@ import Signup from "./Components/Signup";
 import OrderForm from "./Components/OrderForm";
 import DetailsCard from "./Components/DetailsCard";
 import Admin from "./Components/Admin";
-import UpdateOrder from './Components/UpdateOrder';
+// import UpdateOrder from './Components/UpdateOrder';
 import AdminDash from './Components/AdminDash';
 import Maps from './Components/maps';
 import Email from './Components/email';
@@ -34,6 +35,8 @@ import Email from './Components/email';
 
 
 const App =() => {
+  const [user, setUser] = useState(null)
+
  
 
   return(
@@ -56,17 +59,16 @@ const App =() => {
          <Route exact path='/email' element={<Email/>} />
          <Route path='/contact' element={<ContactUs/>} />
          <Route path='/admin' element={<Admin/>} />
-         <Route path='/login' element={<Login/>} />
-         <Route path='/signup' element={<Signup/>} />
+         <Route path='/login' element={<Login onLogin={setUser}/>} />
+         <Route path='/signup' element={<Signup onLogin={setUser}/>} />
          <Route path='/admin' element={<Admin/>} />
          <Route path='/orderform' element={<OrderForm />} />
          <Route path="/order/:id" element={<DetailsCard />} />
-         <Route path="/updateorder/:id" element={<UpdateOrder />} />
+         {/* <Route path="/updateorder/:id" element={<UpdateOrder />} /> */}
          <Route path='/admin' element={<Admin/>} />
          <Route path='/admindashboard' element={<AdminDash/>} />
          <Route path='/contact' element={<ContactUs/>} />
-         <Route path='/order' element={<Orders/>} />
-
+         <Route path='/order' element={<Orders onLogin={setUser}/>} />
          </Routes>
       <Footer/>
 </>
