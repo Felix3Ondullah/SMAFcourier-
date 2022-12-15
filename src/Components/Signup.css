@@ -94,3 +94,6 @@ input:not(:placeholder-shown){
     border: 2px solid transparent;
     border-radius: 5px;
 }
+.field-wrap{
+    margin: 0.5rem;
+}
