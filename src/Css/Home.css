@@ -4,45 +4,30 @@
     display: flex;
     justify-content:space-around ;
     align-items: center;
-    /* background-image: url("../Components/images/img1.jpg");
+    background-image: url("../Components/images/12.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
-    width:100%; */
+    width:100%;
     /* color: whitesmoke; */
 }
 
 .contentbox{
-    width: 40%;
+    /* width: 0%; */
+    margin-right: 70%;
     padding-left: 2em;
+    height: 50%;
+    justify-content: left;
 }
 
 .contentbox h1{
-    font-size: 2.5rem;
+    font-size: 1.8rem;
 }
 
 .contentbox p{
-    font-size: 1.5rem;
+    font-size: 1.0rem;
     margin: 1em 0;
     font-family: 'Poppins', sans-serif;
-}
-
-.btnBox{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 2em;
-   
-}
-
-.btn{
-  border: 2px solid #3897f0;
-  border-radius: 2em;;
-  background-image: linear-gradient(#3897f0, #3897f0),
-  radial-gradient(circle at bottom right,#3897f0,#3897f0);
-  background-origin: border-box;
-  
-    
 }
 
 .SendNow{
@@ -53,13 +38,3 @@
     padding: 0.5em 1.5em;
 }
 
-.imageContainer{
-    width: 80%;
-}
-
-.imageContainer img{
-    max-width:60%;
-    height:auto;
- margin: 0 auto;
- display: block;
-}

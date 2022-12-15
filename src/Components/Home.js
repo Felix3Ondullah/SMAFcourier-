@@ -13,14 +13,14 @@ const Home =() =>{
                  Choose the best package to suit your courier needs.</p>
                  <div className="btnBox">
                     <div className="btn">
-                    <NavLink to ='/login' className="SendNow bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"> Send Parcel </NavLink>
+                    <NavLink to ='/login' className="SendNow bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"> Send Parcel </NavLink>
                     </div>
 
                  </div>
         </div>
-        <div className="imageContainer">
+        {/* <div className="imageContainer">
             <img src ={homeimage} alt = "home" />
-        </div>
+        </div> */}
        </div>
         </>
 
